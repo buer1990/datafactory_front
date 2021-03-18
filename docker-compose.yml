@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  django_datafactory:
+    image: ddf:v1.1
+    tty: true
+    container_name: datafactory_front
+    volumes:
+      - /data/jenkins_home/workspace/datafactory_front:/data/jenkins_home/workspace/datafactory_front
+    ports:
+      - "8000:8000"

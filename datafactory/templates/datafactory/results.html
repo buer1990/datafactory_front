@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>results</title>
+</head>
+<body>
+<h1>{{tool.tool_name}}</h1>
+<ul>
+    {% for toolattr in tool.toolattr_set.all %}
+    <li>
+        {{toolattr.attr_describe}}--{{toolattr.attr_value }}
+    </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'datafactory:detail' tool.id %}">需要再次创建吗？</a>
+</body>
+</html>
